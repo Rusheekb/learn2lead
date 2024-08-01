@@ -8,8 +8,8 @@ body {
 }
 
 header {
-    background-color: #003366;
-    color: #ffcc00;
+    background-color: #003366; /* Blue */
+    color: #ffcc00; /* Gold */
     padding: 1rem 0;
     text-align: center;
 }
@@ -29,7 +29,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffcc00;
+    color: #ffcc00; /* Gold */
     text-decoration: none;
 }
 
@@ -43,14 +43,14 @@ nav ul li a {
 
 .banner-slide {
     display: none;
-    position: absolute;
     width: 100%;
     height: 100%;
 }
 
 .banner-slide img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 .active {
@@ -84,7 +84,7 @@ nav ul li a {
 .indicators {
     text-align: center;
     padding: 10px;
-    background-color: #003366;
+    background-color: #003366; /* Blue */
 }
 
 .indicator {
@@ -99,7 +99,7 @@ nav ul li a {
 }
 
 .active-indicator {
-    background-color: #ffcc00;
+    background-color: #ffcc00; /* Gold */
 }
 
 section {
@@ -110,7 +110,7 @@ section {
 }
 
 h2 {
-    color: #003366;
+    color: #003366; /* Blue */
 }
 
 form {
@@ -134,22 +134,110 @@ form button {
     margin-top: 1rem;
     padding: 0.5rem;
     border: none;
-    background-color: #003366;
-    color: #ffcc00;
+    background-color: #003366; /* Blue */
+    color: #ffcc00; /* Gold */
     border-radius: 20px;
     cursor: pointer;
     font-size: 1rem;
 }
 
 form button:hover {
-    background-color: #ffcc00;
-    color: #003366;
+    background-color: #ffcc00; /* Gold */
+    color: #003366; /* Blue */
 }
 
 footer {
-    background-color: #003366;
-    color: #ffcc00;
+    background-color: #003366; /* Blue */
+    color: #ffcc00; /* Gold */
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+}
+
+/* Call-to-Action Buttons */
+.cta-buttons {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.cta-btn {
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0.5rem;
+    display: inline-block;
+}
+
+.cta-btn:hover {
+    background-color: #003366;
+    color: #ffcc00;
+}
+
+/* Social Media Icons */
+#social-media {
+    text-align: center;
+    padding: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .banner-container {
+        height: 200px; /* Adjust height for mobile */
+    }
+
+    section {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .cta-btn {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (min-width: 769px) {
+    .banner-container {
+        height: 400px; /* Adjust height for larger screens */
+    }
 }

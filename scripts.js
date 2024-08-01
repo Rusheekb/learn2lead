@@ -31,53 +31,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Rotating banner functionality
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("banner-slide");
-    const indicators = document.getElementsByClassName("indicator");
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-    let autoSlideTimeout;
-
-    function showSlides() {
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            indicators[i].className = indicators[i].className.replace(" active-indicator", "");
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex - 1].style.display = "block";
-        indicators[slideIndex - 1].className += " active-indicator";
-        autoSlideTimeout = setTimeout(showSlides, 10000); // Change image every 10 seconds
-    }
-
-    function changeSlide(n) {
-        clearTimeout(autoSlideTimeout);
-        slideIndex += n;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        if (slideIndex < 1) {slideIndex = slides.length}
-        for (let i = 0; i < slides.length; i++) {
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("banner-slide");
+        const indicators = document.getElementsByClassName("indicator");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
             indicators[i].className = indicators[i].className.replace(" active-indicator", "");
         }
         slides[slideIndex - 1].style.display = "block";
         indicators[slideIndex - 1].className += " active-indicator";
-        autoSlideTimeout = setTimeout(showSlides, 10000);
     }
 
-    function currentSlide(n) {
-        clearTimeout(autoSlideTimeout);
-        slideIndex = n;
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            indicators[i].className = indicators[i].className.replace(" active-indicator", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        indicators[slideIndex - 1].className += " active-indicator";
-        autoSlideTimeout = setTimeout(showSlides, 10000);
+    window.changeSlide = function(n) {
+        showSlides(slideIndex += n);
     }
 
-    showSlides();
+    window.currentSlide = function(n) {
+        showSlides(slideIndex = n);
+    }
 
-    autoSlideTimeout = setTimeout(showSlides, 10000);
-    window.changeSlide = changeSlide;
-    window.currentSlide = currentSlide;
+    setInterval(() => {
+        showSlides(slideIndex += 1);
+    }, 10000); // Change image every 10 seconds
 });
