@@ -1,13 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
-
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const message = document.getElementById("message").value;
-
         if (name && email && message) {
             fetch('http://localhost:3000/contact', {
                 method: 'POST',
@@ -30,32 +27,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Rotating banner functionality
     let slideIndex = 1;
     showSlides(slideIndex);
-
     function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("banner-slide");
+        let slides = document.getElementsByClassName("banner-slide");
         const indicators = document.getElementsByClassName("indicator");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+        for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
             indicators[i].className = indicators[i].className.replace(" active-indicator", "");
         }
         slides[slideIndex - 1].style.display = "block";
         indicators[slideIndex - 1].className += " active-indicator";
     }
-
     window.changeSlide = function(n) {
         showSlides(slideIndex += n);
     }
-
     window.currentSlide = function(n) {
         showSlides(slideIndex = n);
     }
-
     setInterval(() => {
         showSlides(slideIndex += 1);
     }, 10000); // Change image every 10 seconds
