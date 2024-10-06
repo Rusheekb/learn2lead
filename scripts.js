@@ -26,8 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Please fill out all fields before submitting.");
         }
     });
+});
 
-    let slideIndex = 1;
+let slideIndex = 1;
     showSlides(slideIndex);
     function showSlides(n) {
         let slides = document.getElementsByClassName("banner-slide");
@@ -50,4 +51,3 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
         showSlides(slideIndex += 1);
     }, 10000); // Change image every 10 seconds
-});
