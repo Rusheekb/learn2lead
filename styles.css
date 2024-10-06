@@ -8,24 +8,36 @@ body {
 }
 
 header {
-    background-color: #004E7C; /* Dark blue */
-    color: #FFB547; /* Orange */
+    background-color: var(--primary-color);
+    color: #004E7C;
     padding: 1rem 0;
-    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 nav ul {
+    display: flex;
     list-style: none;
-    padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 nav ul li a {
-    color: #FFB547; /* Orange */
+    color: #004E7C;
     text-decoration: none;
 }
 
@@ -172,4 +184,40 @@ footer {
 
 .social-icons img:hover {
     transform: scale(1.1);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.service-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+}
+
+.testimonial {
+    flex: 0 0 300px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
 }
