@@ -72,4 +72,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Sliding functionality for services and testimonials
+function initializeSlider(sectionClass) {
+    const container = document.querySelector(`.${sectionClass}-grid`);
+    const prevButton = document.querySelector(`.${sectionClass}-controls .prev`);
+    const nextButton = document.querySelector(`.${sectionClass}-controls .next`);
+    const cards = container.querySelectorAll('.service-card, .testimonial-card');
+    let currentIndex = 0;
+
+    if (!container || !prevButton || !nextButton) return;
+
+    function updateButtons() {
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= cards.length - 1;
+    }
+
+    function scrollToCard(index) {
+        if (index < 0 || index >= cards.length) return;
+        currentIndex = index;
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 16; // 1rem gap
+        container.scrollTo({
+            left: index * (cardWidth + gap),
+            behavior: 'smooth'
+        });
+        updateButtons();
+    }
+
+    prevButton.addEventListener('click', () => scrollToCard(currentIndex - 1));
+    nextButton.addEventListener('click', () => scrollToCard(currentIndex + 1));
+
+    // Initialize button states
+    updateButtons();
+
+    // Update on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 767) {
+            container.scrollTo({ left: 0, behavior: 'auto' });
+            currentIndex = 0;
+            updateButtons();
+        }
+    });
+}
+
+// Initialize sliders when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSlider('services');
+    initializeSlider('testimonials');
 }); 

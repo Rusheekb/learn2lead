@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -216,6 +216,7 @@ h2 {
 .services {
     padding: 6rem 0 3rem;
     background-color: var(--white);
+    overflow: hidden;
 }
 
 .services-grid {
@@ -223,6 +224,7 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    transition: transform 0.3s ease;
 }
 
 .service-card {
@@ -253,12 +255,14 @@ h2 {
 .testimonials {
     padding: 6rem 0;
     background-color: var(--light-bg);
+    overflow: hidden;
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    transition: transform 0.3s ease;
 }
 
 .testimonial-card {
@@ -563,7 +567,7 @@ h2 {
 /* Medium Devices (Tablets & Smaller Desktops, 992px to 1199px) */
 @media (max-width: 1199px) {
     .container {
-        max-width: 960px;
+        max-width: 1140px;
     }
 
     h1 {
@@ -582,7 +586,7 @@ h2 {
 /* Small Devices (Tablets, 768px to 991px) */
 @media (max-width: 991px) {
     .container {
-        max-width: 720px;
+        max-width: 960px;
     }
 
     h1 {
@@ -621,13 +625,17 @@ h2 {
     .subjects-card, .approach-card {
         padding: 2.5rem;
     }
+
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Extra Small Devices (Mobile phones, 576px to 767px) */
 @media (max-width: 767px) {
     .container {
-        max-width: 540px;
-        padding: 0 1rem;
+        max-width: 720px;
     }
 
     .navbar {
@@ -673,8 +681,24 @@ h2 {
 
     .services-grid,
     .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .service-card,
+    .testimonial-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        margin: 0 auto;
+    }
+
+    .slider-controls {
+        display: flex;
     }
 
     .subjects-approach-grid {
@@ -727,12 +751,9 @@ h2 {
         font-size: 1.75rem;
     }
 
-    .service-card {
-        padding: 1.5rem;
-    }
-
+    .service-card,
     .testimonial-card {
-        padding: 1.5rem;
+        flex: 0 0 90%;
     }
 
     .contact-form {
@@ -773,4 +794,36 @@ h2 {
     .menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
+}
+
+/* Sliding controls */
+.slider-controls {
+    display: none;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.slider-button {
+    background: var(--white);
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-button:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.slider-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 } 
