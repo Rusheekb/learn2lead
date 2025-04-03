@@ -387,8 +387,133 @@ h2 {
     border-top: 1px solid #2d3748;
 }
 
-/* Responsive Design */
+/* Subjects and Approach Section */
+.subjects-approach {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.subjects-approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.subjects-card {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 3.5rem;
+    position: relative;
+}
+
+.subjects-card h2 {
+    color: var(--white);
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.subjects-card p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.subjects-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.subject-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.subject-item i {
+    color: var(--white);
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.approach-card {
+    padding: 3.5rem;
+    background-color: var(--white);
+}
+
+.approach-card h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.approach-card > p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.approach-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.approach-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.approach-number {
+    background-color: #e6f7f1;
+    color: var(--secondary-color);
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.approach-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.approach-content p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Update responsive design for subjects and approach */
 @media (max-width: 768px) {
+    .subjects-approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subjects-list {
+        grid-template-columns: 1fr;
+    }
+
+    .subjects-card, .approach-card {
+        padding: 2rem;
+    }
+
     h1 {
         font-size: 2.5rem;
         text-align: center;
