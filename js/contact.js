@@ -1,88 +1,92 @@
 // Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Disable submit button and show loading state
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        
+        try {
+            // Disable the submit button and show loading state
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
             
-            try {
-                // Get form values
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    subject: document.getElementById('subject').value,
-                    message: document.getElementById('message').value
-                };
-                
-                // Send data to Formspree
-                const response = await fetch('https://formspree.io/f/mgvanndr', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                if (response.ok) {
-                    // Show success message
-                    showNotification('Thank you for your message! We will get back to you soon.', 'success');
-                    contactForm.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                // Show error message
-                showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
-                console.error('Form submission error:', error);
-            } finally {
-                // Reset button state
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText;
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
+            // Send the form data to Formspree
+            const response = await fetch('https://formspree.io/f/mgvanndr', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-        });
-    }
+            
+            // Show success message
+            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+            
+            // Reset the form
+            contactForm.reset();
+            
+        } catch (error) {
+            console.error('Error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+        } finally {
+            // Re-enable the submit button and restore original text
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        }
+    });
 });
 
 // Notification system
-function showNotification(message, type = 'success') {
+function showNotification(message, type) {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;
     
-    // Add to page
-    document.body.appendChild(notification);
-    
     // Add styles
-    notification.style.position = 'fixed';
-    notification.style.bottom = '20px';
-    notification.style.right = '20px';
-    notification.style.padding = '15px 25px';
-    notification.style.borderRadius = '4px';
-    notification.style.color = '#fff';
-    notification.style.fontWeight = '500';
-    notification.style.zIndex = '1000';
-    notification.style.animation = 'slideIn 0.3s ease-out';
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        border-radius: 6px;
+        color: white;
+        font-weight: 500;
+        z-index: 1000;
+        animation: slideIn 0.3s ease-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    `;
     
     // Set background color based on type
-    if (type === 'success') {
-        notification.style.backgroundColor = '#10B981';
-    } else {
-        notification.style.backgroundColor = '#EF4444';
-    }
+    notification.style.backgroundColor = type === 'success' ? '#10B981' : '#EF4444';
+    
+    // Add to document
+    document.body.appendChild(notification);
     
     // Remove after 5 seconds
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease-out';
         setTimeout(() => {
-            notification.remove();
+            document.body.removeChild(notification);
         }, 300);
     }, 5000);
 }
