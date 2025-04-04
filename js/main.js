@@ -25,6 +25,70 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
+// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Check for saved theme preference or use system preference
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        document.body.classList.remove('dark-mode');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+
+// Navbar color update function
+function updateNavbarColor() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = document.body.classList.contains('dark-mode') 
+            ? 'rgba(15, 23, 42, 0.95)' 
+            : 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.backgroundColor = document.body.classList.contains('dark-mode') 
+            ? 'rgba(15, 23, 42, 0.9)' 
+            : '#ffffff';
+        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    }
+}
+
+// Toggle theme
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Update icon
+    if (document.body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+    }
+    
+    // Update navbar color immediately
+    updateNavbarColor();
+});
+
+// Initialize theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    updateNavbarColor(); // Initial navbar color
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', updateNavbarColor);
+
 // Form submission handling
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
@@ -48,18 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.backgroundColor = '#ffffff';
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-    }
-});
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -72,53 +124,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// Sliding functionality for services and testimonials
-function initializeSlider(sectionClass) {
-    const container = document.querySelector(`.${sectionClass}-grid`);
-    const prevButton = document.querySelector(`.${sectionClass}-controls .prev`);
-    const nextButton = document.querySelector(`.${sectionClass}-controls .next`);
-    const cards = container.querySelectorAll('.service-card, .testimonial-card');
-    let currentIndex = 0;
-
-    if (!container || !prevButton || !nextButton) return;
-
-    function updateButtons() {
-        prevButton.disabled = currentIndex === 0;
-        nextButton.disabled = currentIndex >= cards.length - 1;
-    }
-
-    function scrollToCard(index) {
-        if (index < 0 || index >= cards.length) return;
-        currentIndex = index;
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 16; // 1rem gap
-        container.scrollTo({
-            left: index * (cardWidth + gap),
-            behavior: 'smooth'
-        });
-        updateButtons();
-    }
-
-    prevButton.addEventListener('click', () => scrollToCard(currentIndex - 1));
-    nextButton.addEventListener('click', () => scrollToCard(currentIndex + 1));
-
-    // Initialize button states
-    updateButtons();
-
-    // Update on window resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 767) {
-            container.scrollTo({ left: 0, behavior: 'auto' });
-            currentIndex = 0;
-            updateButtons();
-        }
-    });
-}
-
-// Initialize sliders when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initializeSlider('services');
-    initializeSlider('testimonials');
 }); 
