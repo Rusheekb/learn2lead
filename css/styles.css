@@ -171,7 +171,7 @@ h2 {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 0 4rem;
+    padding: 4rem 0 4rem;
     background-color: var(--light-bg);
     min-height: 90vh;
     display: flex;
@@ -376,6 +376,16 @@ h2 {
 
 .contact-card p {
     color: var(--text-color);
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--secondary-color);
 }
 
 .contact-form {
@@ -1008,7 +1018,7 @@ h2 {
 
 /* Blog Section */
 .blog {
-    padding: 6rem 0;
+    padding: 1rem 0;
     background-color: var(--light-bg);
     transition: var(--transition);
 }
@@ -1094,12 +1104,49 @@ h2 {
 /* Responsive adjustments for blog section */
 @media (max-width: 991px) {
     .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 1rem 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .blog-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .blog-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 767px) {
-    .blog-grid {
-        grid-template-columns: 1fr;
+    .blog-card {
+        flex: 0 0 90%;
+    }
+}
+
+/* Update contact card sizes for mobile */
+@media (max-width: 767px) {
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .contact-card i {
+        font-size: 1.5rem;
+    }
+
+    .contact-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-card p {
+        font-size: 0.9rem;
     }
 } 

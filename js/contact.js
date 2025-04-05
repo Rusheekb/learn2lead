@@ -2,7 +2,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
-    if (!contactForm) return;
+    if (!contactForm) {
+        console.error('Contact form not found');
+        return;
+    }
 
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -17,25 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get form data
             const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
             
             // Send the form data to Formspree
             const response = await fetch('https://formspree.io/f/mgvanndr', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
-                body: JSON.stringify(data)
+                body: formData // Send FormData directly instead of JSON
             });
             
+            const result = await response.json();
+            
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(result.error || 'Network response was not ok');
             }
             
             // Show success message
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
             
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Form submission error:', error);
             showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
         } finally {
             // Re-enable the submit button and restore original text
