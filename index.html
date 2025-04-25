@@ -3,359 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of your website.">
     <title>Learn2Lead - Academic Excellence</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Learn2Lead</a>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="#get-started" class="get-started-btn">Get Started</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1>Unlock Your<br>Academic Potential</h1>
-                <p>Personalized tutoring designed to help you achieve your academic goals. Our expert tutors are here to guide you every step of the way!</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn primary">Get Started Today</a>
-                    <a href="#services" class="btn secondary">Learn More</a>
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">Learn2Lead</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Students learning together" class="rounded-image" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Comprehensive Learning Services</h2>
-            <p class="section-subtitle">Everything you need to excel in your academic journey</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Personalized Learning</h3>
-                    <p>Customized study plans tailored to your unique learning style and goals.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Expert Tutors</h3>
-                    <p>Learn from experienced educators with proven track records of student success.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-book"></i>
-                    <h3>Comprehensive Subjects</h3>
-                    <p>Coverage of all major academic subjects and test preparation materials.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Progress Tracking</h3>
-                    <p>Regular assessments and detailed progress reports to monitor your growth.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-users"></i>
-                    <h3>1 on 1 Sessions</h3>
-                    <p>Personalized one-on-one tutoring sessions focused entirely on your learning needs and pace.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>College Prep</h3>
-                    <p>Specialized programs for college admissions and standardized tests.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Subjects and Approach Section -->
-    <section class="subjects-approach">
-        <div class="container">
-            <div class="subjects-approach-grid">
-                <!-- Subjects We Cover -->
-                <div class="subjects-card">
-                    <h2>Subjects We Cover</h2>
-                    <p>Our comprehensive tutoring programs cover a wide range of subjects to support students at every level.</p>
-                    
-                    <div class="subjects-list">
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Mathematics</span>
-                        </div>
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>English</span>
-                        </div>
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Foreign Languages</span>
-                        </div>
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Computer Science</span>
-                        </div>
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Science</span>
-                        </div>
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>History</span>
-                        </div>
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Test Prep</span>
-                        </div>
-                        <div class="subject-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Writing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Our Approach -->
-                <div class="approach-card">
-                    <h2>Our Approach</h2>
-                    <p>We believe that every student has unique learning needs. Our methodology combines:</p>
-                    
-                    <div class="approach-list">
-                        <div class="approach-item">
-                            <div class="approach-number">1</div>
-                            <div class="approach-content">
-                                <h3>Assessment</h3>
-                                <p>Understanding your current level and goals</p>
-                            </div>
-                        </div>
-                        <div class="approach-item">
-                            <div class="approach-number">2</div>
-                            <div class="approach-content">
-                                <h3>Personalization</h3>
-                                <p>Creating a custom learning plan</p>
-                            </div>
-                        </div>
-                        <div class="approach-item">
-                            <div class="approach-number">3</div>
-                            <div class="approach-content">
-                                <h3>Guidance</h3>
-                                <p>Regular sessions with expert tutors</p>
-                            </div>
-                        </div>
-                        <div class="approach-item">
-                            <div class="approach-number">4</div>
-                            <div class="approach-content">
-                                <h3>Progress Tracking</h3>
-                                <p>Regular assessments to measure improvement</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Our Students Say</h2>
-            <p class="section-subtitle">Success stories from our community of learners</p>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="images/blank-profile.png" alt="Student profile" loading="lazy">
-                        <div class="testimonial-info">
-                            <h3>Anonymous Student</h3>
-                            <p>Middle School Student</p>
-                        </div>
-                    </div>
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"My tutor helps me learn a lot of new topics to keep me ahead in my classes. They always explains new topics in a way that I can understand. In science I learned about the periodic table and in the end of class we played a quiz game to have fun and learn! They make class fun by playing educational games to help me learn but also have fun!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="images/blank-profile.png" alt="Student profile" loading="lazy">
-                        <div class="testimonial-info">
-                            <h3>Anonymous Student</h3>
-                            <p>High School Student</p>
-                        </div>
-                    </div>
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"My tutor is really good at teaching and understanding with what I'm struggling with. She comes up with several teaching methods if one is not working for me and she makes sure I'm growing."</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="images/blank-profile.png" alt="Parent profile" loading="lazy">
-                        <div class="testimonial-info">
-                            <h3>Anonymous Parent</h3>
-                            <p>Parent</p>
-                        </div>
-                    </div>
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"..."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2>Latest Insights</h2>
-            <p class="section-subtitle">Educational resources and tips to help you succeed</p>
-            
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Study techniques" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">June 15, 2025</div>
-                        <h3>5 Habits of Highly Effective Students</h3>
-                        <p>Discover the key habits that top-performing students use to maximize their learning potential and achieve academic success.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Public speaking" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">June 10, 2025</div>
-                        <h3>How to Build Confidence in Public Speaking</h3>
-                        <p>Learn practical techniques to overcome stage fright and develop the confidence to speak effectively in any situation.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Time management" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">June 5, 2025</div>
-                        <h3>The Power of Emotional Intelligence in Leadership</h3>
-                        <p>Explore how emotional intelligence can enhance your leadership abilities and improve your relationships with others.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="center-button">
-                <a href="#" class="btn primary">View All Articles</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>Dallas Area</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p><a href="tel:9258547020" class="contact-link">(925) 854-7020</a></p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p><a href="mailto:learn2leadtutoring@gmail.com" class="contact-link">learn2leadtutoring@gmail.com</a></p>
-                    </div>
-                </div>
-                
-                <form id="contactForm" class="contact-form" action="https://formspree.io/f/mgvanndr" method="POST">
-                    <input type="hidden" name="_subject" value="Learn2Lead Contact Form Submission">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>Learn2Lead</h3>
-                    <p>Empowering students to achieve academic excellence and develop strong leadership skills.</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
+                <div class="nav-links">
                     <a href="#services">Services</a>
                     <a href="#testimonials">Testimonials</a>
                     <a href="#blog">Blog</a>
                     <a href="#contact">Contact</a>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#get-started" class="get-started-btn">Get Started</a>
                 </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p>Phone: (925) 854-7020<br>Email: learn2leadtutoring@gmail.com</p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Unlock Your<br>Academic Potential</h1>
+                    <p>Personalized tutoring designed to help you achieve your academic goals. Our expert tutors are here to guide you every step of the way!</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn primary">Get Started Today</a>
+                        <a href="#services" class="btn secondary">Learn More</a>
+                    </div>
                 </div>
-                <div class="footer-social">
-                    <h3>Follow Us</h3>
-                    <p>Coming Soon...</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Students learning together" class="rounded-image" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Comprehensive Learning Services</h2>
+                <p class="section-subtitle">Everything you need to excel in your academic journey</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Personalized Learning</h3>
+                        <p>Customized study plans tailored to your unique learning style and goals.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Expert Tutors</h3>
+                        <p>Learn from experienced educators with proven track records of student success.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Comprehensive Subjects</h3>
+                        <p>Coverage of all major academic subjects and test preparation materials.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Progress Tracking</h3>
+                        <p>Regular assessments and detailed progress reports to monitor your growth.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-users"></i>
+                        <h3>1 on 1 Sessions</h3>
+                        <p>Personalized one-on-one tutoring sessions focused entirely on your learning needs and pace.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>College Prep</h3>
+                        <p>Specialized programs for college admissions and standardized tests.</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Learn2Lead. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/contact.js"></script>
-</body>
-</html> 
+        <!-- Subjects and Approach Section -->
+        <section class="subjects-approach">
+            <div class="container">
+                <div class="subjects-approach-grid">
+                    <!-- Subjects We Cover -->
+                    <div class="subjects-card">
+                        <h2>Subjects We Cover</h2>
+                        <p>Our comprehensive tutoring programs cover a wide range of subjects to support students at every level.</p>
+                        
+                        <div class="subjects-list">
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mathematics</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>English</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Foreign Languages</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Computer Science</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Science</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>History</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Test Prep</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Writing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Our Approach -->
+                    <div class="approach-card">
+                        <h2>Our Approach</h2>
+                        <p>We believe that every student has unique learning needs. Our methodology combines:</p>
+                        
+                        <div class="approach-list">
+                            <div class="approach-item">
+                                <div class="approach-number">1</div>
+                                <div class="approach-content">
+                                    <h3>Assessment</h3>
+                                    <p>Understanding your current level and goals</p>
+                                </div>
+                            </div>
+                            <div class="approach-item">
+                                <div class="approach-number">2</div>
+                                <div class="approach-content">
+                                    <h3>Personalization</h3>
+                                    <p>Creating a custom learning plan</p>
+                                </div>
+                            </div>
+                            <div class="approach-item">
+                                <div class="approach-number">3</div>
+                                <div class="approach-content">
+                                    <h3>Guidance</h3>
+                                    <p>Regular sessions with expert tutors</p>
+                                </div>
+                            </div>
+                            <div class="approach-item">
+                                <div class="approach-number">4</div>
+                                <div class="approach-content">
+                                    <h3>Progress Tracking</h3>
+                                    <p>Regular assessments to measure improvement</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>What Our Students Say</h2>
+                <p class="section-subtitle">Success stories from our community of learners</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="images/blank-profile.png" alt="Student profile" loading="lazy">
+                            <div class="testimonial-info">
+                                <h3>Ariana R.</h3>
+                                <p>Middle School Student</p>
+                            </div>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                        <p class="testimonial-text">"My tutor helps me learn a lot of new topics to keep me ahead in my classes. They always explains new topics in a way that I can understand. In science I learned about the periodic table and in the end of class we played a quiz game to have fun and learn! They make class fun by playing educational games to help me learn but also have fun!"</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="images/blank-profile.png" alt="Student profile" loading="lazy">
+                            <div class="testimonial-info">
+                                <h3>Adhvika C.</h3>
+                                <p>High School Student</p>
+                            </div>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                        <p class="testimonial-text">"My tutor is really good at teaching and understanding with what I'm struggling with. She comes up with several teaching methods if one is not working for me and she makes sure I'm growing."</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="images/blank-profile.png" alt="Parent profile" loading="lazy">
+                            <div class="testimonial-info">
+                                <h3>Sasi V.</h3>
+                                <p>Parent</p>
+                            </div>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                        <p class="testimonial-text">"Since my son began high school ELA tutoring in the summer of 2024, his reading and writing skills have improved remarkably. The tutor tailors lessons to his learning style, providing detailed feedback and adapting to our homeschool curriculum. Her expertise in grammar, writing, and SAT prep has been invaluable. Thanks to her guidance, ELA has transformed from his least favorite subject to one he genuinely enjoys."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+<!-- 
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2>Latest Insights</h2>
+                <p class="section-subtitle">Educational resources and tips to help you succeed</p>
+                
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Study techniques" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">June 15, 2025</div>
+                            <h3>5 Habits of Highly Effective Students</h3>
+                            <p>Discover the key habits that top-performing students use to maximize their learning potential and achieve academic success.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Public speaking" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">June 10, 2025</div>
+                            <h3>How to Build Confidence in Public Speaking</h3>
+                            <p>Learn practical techniques to overcome stage fright and develop the confidence to speak effectively in any situation.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Time management" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">June 5, 2025</div>
+                            <h3>The Power of Emotional Intelligence in Leadership</h3>
+                            <p>Explore how emotional intelligence can enhance your leadership abilities and improve your relationships with others.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="center-button">
+                    <a href="#" class="btn primary">View All Articles</a>
+                </div>
+            </div>
+        </section>
+-->
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
+      <div class="contact-grid">
+        <!-- Contact Info Cards (unchanged) -->
+        <div class="contact-info">
+            <!-- <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Dallas Area</p>
+        </div> -->
+        <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p><a href="tel:9258547020" class="contact-link">(925) 854-7020</a></p>
+        </div>
+        <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p><a href="mailto:learn2leadtutoring@gmail.com" class="contact-link">learn2leadtutoring@gmail.com</a></p>
+        </div>
+        </div>
+  
+        <!-- Simplified Formspree Form -->
+        <form
+  id="contactForm"
+  action="https://formspree.io/f/mgvanndr"
+  method="POST"
+>
+  <input type="hidden" name="_subject" value="Learn2Lead Contact Form Submission">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+
+  <!-- Status output -->
+  <p id="contact-status" role="status" aria-live="polite"></p>
+
+  <button type="submit" class="btn primary">Send Message</button>
+</form>
+
+<!-- Load after markup with defer -->
+<script defer src="js/contact.js"></script>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- Load your main scripts with defer so they execute after markup parses -->
+  <script defer src="js/main.js"></script>    <!-- e.g., menu toggle, theme switch -->
+  <script defer src="js/contact.js"></script> <!-- Contact handler below -->
+  </body>
+  </html>  
